@@ -1,0 +1,7 @@
+-r requirements.txt
+matplotlib>=3.7,<4
+seaborn>=0.12,<1
+jupyter>=1,<2
+notebook>=7,<8
+ipywidgets>=8,<9
+tqdm>=4.65,<5

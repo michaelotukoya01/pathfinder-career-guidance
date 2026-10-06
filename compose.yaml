@@ -1,0 +1,27 @@
+services:
+  backend:
+    build: .
+    restart: unless-stopped
+    environment:
+      PROFILE_STORAGE_DIR: /app/profiles
+      ADMIN_API_KEY: ${ADMIN_API_KEY:-}
+      ENABLE_RETRAINING_SCHEDULER: 'false'
+      MARKET_WEIGHT: '0'
+      FORWARDED_ALLOW_IPS: '*'
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      ANTHROPIC_MODEL: ${ANTHROPIC_MODEL:-claude-haiku-4-5}
+    volumes:
+      - profile-data:/app/profiles
+      - model-data:/app/models
+    # No backend port is published: only the private frontend proxy can reach it.
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:3000:8080'
+    depends_on:
+      backend:
+        condition: service_healthy
+volumes:
+  profile-data:
+  model-data:

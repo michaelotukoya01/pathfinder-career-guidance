@@ -1,0 +1,46 @@
+# Local configuration, credentials and generated state
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+.run/
+profiles/
+models/
+*.sqlite*
+*.db
+*.log
+*.pid
+*.backup
+*.bak
+nul
+NUL
+
+# Dependencies and build outputs
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+build/
+dist/
+coverage/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+# Historical generated arrays/reports; current evaluation is in docs/.
+/X_train.npy
+/X_test.npy
+/y_train.npy
+/y_test.npy
+/feature_names.json
+/model_results.json
+
+# Personal editor and agent configuration
+.agents/
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

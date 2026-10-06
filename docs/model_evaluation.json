@@ -1,0 +1,307 @@
+{
+  "dataset": "synthetic_career_data.csv",
+  "dataset_sha256": "74b763bb07fd6b60bfc012e1059dafba7c79f9f87fe4e5619cf44b2ce47bae9c",
+  "data_type": "synthetic; no real-world validity established",
+  "random_seed": 42,
+  "training_rows": 400,
+  "test_rows": 100,
+  "input_features": 45,
+  "method": "stratified 80/20 split; 5-fold train-only pipeline CV for C; held-out test used once",
+  "excluded_columns": [
+    "confidence_score",
+    "recommended_career",
+    "skill_gaps",
+    "top_3_careers",
+    "user_id"
+  ],
+  "best_C": 0.1,
+  "cv_macro_f1": 0.34605064163163635,
+  "test_accuracy": 0.45,
+  "test_macro_f1": 0.40129085007133786,
+  "test_top_3_accuracy": 0.79,
+  "test_log_loss": 1.4393127412390312,
+  "majority_baseline_accuracy": 0.18,
+  "per_class": {
+    "AI Engineer": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 6.0
+    },
+    "Backend Developer": {
+      "precision": 0.5,
+      "recall": 0.2,
+      "f1-score": 0.2857142857142857,
+      "support": 5.0
+    },
+    "Cloud Engineer": {
+      "precision": 0.8333333333333334,
+      "recall": 0.625,
+      "f1-score": 0.7142857142857143,
+      "support": 8.0
+    },
+    "Cybersecurity Analyst": {
+      "precision": 0.8,
+      "recall": 0.5,
+      "f1-score": 0.6153846153846154,
+      "support": 8.0
+    },
+    "Data Analyst": {
+      "precision": 0.5,
+      "recall": 0.2,
+      "f1-score": 0.2857142857142857,
+      "support": 5.0
+    },
+    "Data Scientist": {
+      "precision": 0.4444444444444444,
+      "recall": 0.5714285714285714,
+      "f1-score": 0.5,
+      "support": 7.0
+    },
+    "Database Administrator": {
+      "precision": 0.6521739130434783,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.7317073170731707,
+      "support": 18.0
+    },
+    "Frontend Developer": {
+      "precision": 0.3,
+      "recall": 0.3,
+      "f1-score": 0.3,
+      "support": 10.0
+    },
+    "Machine Learning Engineer": {
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.4,
+      "support": 6.0
+    },
+    "Network Engineer": {
+      "precision": 0.3333333333333333,
+      "recall": 0.4,
+      "f1-score": 0.36363636363636365,
+      "support": 10.0
+    },
+    "Software Engineer": {
+      "precision": 0.3333333333333333,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.3333333333333333,
+      "support": 9.0
+    },
+    "UI/UX Designer": {
+      "precision": 0.23076923076923078,
+      "recall": 0.375,
+      "f1-score": 0.2857142857142857,
+      "support": 8.0
+    },
+    "accuracy": 0.45,
+    "macro avg": {
+      "precision": 0.4522822990214294,
+      "recall": 0.38928571428571423,
+      "f1-score": 0.40129085007133786,
+      "support": 100.0
+    },
+    "weighted avg": {
+      "precision": 0.4709639539204757,
+      "recall": 0.45,
+      "f1-score": 0.44487315123900495,
+      "support": 100.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0,
+      2,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      2,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      15,
+      1,
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      3,
+      0,
+      0,
+      1,
+      5
+    ],
+    [
+      2,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      2,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      4,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      3,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      0,
+      2,
+      0,
+      3
+    ]
+  ],
+  "classes": [
+    "AI Engineer",
+    "Backend Developer",
+    "Cloud Engineer",
+    "Cybersecurity Analyst",
+    "Data Analyst",
+    "Data Scientist",
+    "Database Administrator",
+    "Frontend Developer",
+    "Machine Learning Engineer",
+    "Network Engineer",
+    "Software Engineer",
+    "UI/UX Designer"
+  ],
+  "limitations": [
+    "Small synthetic dataset",
+    "No employment outcomes or demographic fairness validation",
+    "Probability scores are uncalibrated",
+    "Existing historical holdout has been inspected in prior development"
+  ],
+  "artifacts_sha256": {
+    "best_model.pkl": "16d9d1177a8a6304eb323c41dfb36b6a5e82ae1c3eac2b4709dabb377a9b5f15",
+    "preprocessor.pkl": "dda68f6cf8121f0bd892753217e612d34be7649f7a3e5a92c7128c84bdc2aa15",
+    "label_encoder.pkl": "817b7c38afc1ee058fa1256ec396c957abdfc0b66f35175d972b9bd782a9e55a",
+    "preprocessing_info.json": "cfe7bbd87d0b633571f1e83c2ef703b839730ddc95181644a7223953429d9695"
+  }
+}

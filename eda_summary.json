@@ -1,0 +1,470 @@
+{
+  "dataset_info": {
+    "n_records": 500,
+    "n_features": 50,
+    "career_distribution": {
+      "Database Administrator": 91,
+      "Network Engineer": 52,
+      "Frontend Developer": 50,
+      "Software Engineer": 43,
+      "Cloud Engineer": 42,
+      "UI/UX Designer": 42,
+      "Cybersecurity Analyst": 40,
+      "Data Scientist": 33,
+      "AI Engineer": 29,
+      "Machine Learning Engineer": 29,
+      "Backend Developer": 25,
+      "Data Analyst": 24
+    },
+    "confidence_score_stats": {
+      "mean": 0.857508,
+      "median": 0.874,
+      "std": 0.12632376388726427,
+      "min": 0.375,
+      "max": 1.0
+    }
+  },
+  "academic_stats": {
+    "academic_mathematics": {
+      "count": 500.0,
+      "mean": 3.092,
+      "std": 1.41404917529069,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "academic_statistics": {
+      "count": 500.0,
+      "mean": 3.084,
+      "std": 1.4017395433870694,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "academic_programming": {
+      "count": 500.0,
+      "mean": 3.13,
+      "std": 1.42729616712769,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "academic_computer_networking": {
+      "count": 500.0,
+      "mean": 2.958,
+      "std": 1.4395765910583034,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "academic_database_management": {
+      "count": 500.0,
+      "mean": 3.05,
+      "std": 1.4365330676698738,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "academic_web_development": {
+      "count": 500.0,
+      "mean": 2.92,
+      "std": 1.38326673266851,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    }
+  },
+  "skill_stats": {
+    "skill_python": {
+      "count": 500.0,
+      "mean": 2.622,
+      "std": 1.5900227497395687,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_javascript": {
+      "count": 500.0,
+      "mean": 2.42,
+      "std": 1.6263117104537859,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_java": {
+      "count": 500.0,
+      "mean": 2.55,
+      "std": 1.6855807203244402,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_c_cplusplus": {
+      "count": 500.0,
+      "mean": 2.662,
+      "std": 1.6423003076785934,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_sql": {
+      "count": 500.0,
+      "mean": 2.466,
+      "std": 1.6279263768909067,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_html_css": {
+      "count": 500.0,
+      "mean": 2.4,
+      "std": 1.6690030384288008,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_react": {
+      "count": 500.0,
+      "mean": 2.43,
+      "std": 1.584335898880336,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_networking": {
+      "count": 500.0,
+      "mean": 2.508,
+      "std": 1.6047075036730805,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_linux": {
+      "count": 500.0,
+      "mean": 2.452,
+      "std": 1.6139720603601682,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_databases": {
+      "count": 500.0,
+      "mean": 2.426,
+      "std": 1.6546903033498443,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_cloud": {
+      "count": 500.0,
+      "mean": 2.562,
+      "std": 1.617215747371727,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_cybersecurity": {
+      "count": 500.0,
+      "mean": 2.646,
+      "std": 1.6241797683260555,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_data analysis": {
+      "count": 500.0,
+      "mean": 2.612,
+      "std": 1.530405266771231,
+      "min": 0.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "skill_machine learning": {
+      "count": 500.0,
+      "mean": 2.566,
+      "std": 1.48257886136297,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    }
+  },
+  "interest_stats": {
+    "interest_building_applications": {
+      "count": 500.0,
+      "mean": 2.636,
+      "std": 1.292611964737587,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "interest_analyzing_data": {
+      "count": 500.0,
+      "mean": 2.574,
+      "std": 1.1997511432006316,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 3.0,
+      "max": 5.0
+    },
+    "interest_artificial_intelligence": {
+      "count": 500.0,
+      "mean": 2.614,
+      "std": 1.266575076673191,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 3.25,
+      "max": 5.0
+    },
+    "interest_cybersecurity": {
+      "count": 500.0,
+      "mean": 2.738,
+      "std": 1.4385739431742672,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "interest_networking": {
+      "count": 500.0,
+      "mean": 2.612,
+      "std": 1.4330258637765423,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "interest_cloud_computing": {
+      "count": 500.0,
+      "mean": 2.714,
+      "std": 1.4255765630348125,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "interest_databases": {
+      "count": 500.0,
+      "mean": 2.65,
+      "std": 1.4168680355135832,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "interest_ui_ux_design": {
+      "count": 500.0,
+      "mean": 2.54,
+      "std": 1.3356526254500993,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "interest_research": {
+      "count": 500.0,
+      "mean": 3.096,
+      "std": 1.0978134580963903,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    }
+  },
+  "workpref_stats": {
+    "workpref_building_things": {
+      "count": 500.0,
+      "mean": 2.694,
+      "std": 1.3535243093909413,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "workpref_analyzing_information": {
+      "count": 500.0,
+      "mean": 2.62,
+      "std": 1.2848742364944572,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "workpref_solving_security_problems": {
+      "count": 500.0,
+      "mean": 2.812,
+      "std": 1.4158620450670052,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "workpref_working_with_numbers": {
+      "count": 500.0,
+      "mean": 3.062,
+      "std": 1.322745368777091,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "workpref_designing_ui": {
+      "count": 500.0,
+      "mean": 2.54,
+      "std": 1.3190450180031907,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 2.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "workpref_investigating_problems": {
+      "count": 500.0,
+      "mean": 3.086,
+      "std": 1.2544925280789887,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    }
+  },
+  "personality_stats": {
+    "personality_analytical": {
+      "count": 500.0,
+      "mean": 2.95,
+      "std": 1.2093075910203321,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "personality_creative": {
+      "count": 500.0,
+      "mean": 2.608,
+      "std": 1.2431519833501514,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 3.0,
+      "max": 5.0
+    },
+    "personality_problem_solver": {
+      "count": 500.0,
+      "mean": 2.924,
+      "std": 1.2137422875888286,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "personality_detail_oriented": {
+      "count": 500.0,
+      "mean": 3.02,
+      "std": 1.4012590959948186,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "personality_collaborative": {
+      "count": 500.0,
+      "mean": 2.974,
+      "std": 1.4217477742085387,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 5.0
+    },
+    "personality_independent_worker": {
+      "count": 500.0,
+      "mean": 3.25,
+      "std": 1.3911760282160435,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 5.0,
+      "max": 5.0
+    }
+  },
+  "top_correlations_with_confidence": {
+    "positive": {
+      "interest_research": 0.4111428908668218,
+      "academic_programming": 0.38798289097405064,
+      "skill_java": 0.37345629894435334,
+      "skill_python": 0.358033904564231,
+      "interest_building_applications": 0.3560416302255691
+    },
+    "negative": {
+      "workpref_solving_security_problems": 0.08042330309270435,
+      "skill_cloud": 0.0689533782796584,
+      "interest_cloud_computing": 0.06672056086704342,
+      "personality_detail_oriented": -0.04151607968928605,
+      "personality_collaborative": -0.01394093657350205
+    }
+  },
+  "feature_group_importance": {
+    "Academic": 0.2633156489281612,
+    "Skills": 0.23860551956040385,
+    "Interests": 0.25575960010793447,
+    "Work Preferences": 0.2200711047098253,
+    "Personality": 0.17828582244100855
+  }
+}
