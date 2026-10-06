@@ -1,6 +1,6 @@
 # Python 3.13; runtime versions match the bundled model and tested API.
 numpy==2.5.1
-pandas==3.0.5
+pandas==3.0.6
 scipy==1.18.0
 scikit-learn==1.9.0
 fastapi==0.141.1
