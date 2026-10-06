@@ -4,4 +4,4 @@ seaborn>=0.12,<1
 jupyter>=1,<2
 notebook>=7,<8
 ipywidgets>=8,<9
-tqdm>=4.65,<5
+tqdm>=4.70.1,<5
