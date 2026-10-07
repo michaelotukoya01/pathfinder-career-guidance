@@ -542,7 +542,10 @@ class ModelRetrainer:
             return False
 
 # Global instance
-model_retrainer = ModelRetrainer()
+model_retrainer = ModelRetrainer(
+    model_dir=os.getenv("MODEL_STORAGE_DIR", "models"),
+    data_dir=os.getenv("TRAINING_DATA_DIR", "data"),
+)
 
 # Convenience functions
 def start_retraining_scheduler():

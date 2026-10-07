@@ -6,6 +6,8 @@
 *.pem
 *.key
 .run/
+.vercel/
+/public/
 profiles/
 models/
 *.sqlite*
@@ -44,3 +46,6 @@ coverage/
 .idea/
 .DS_Store
 Thumbs.db
+
+.vercel
+.env*

@@ -12,3 +12,4 @@ requests==2.33.0
 python-dotenv==1.2.2
 joblib==1.5.3
 schedule==1.2.2
+psycopg[binary]==3.3.6

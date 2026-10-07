@@ -160,7 +160,82 @@ class ProfileStore:
             return False
 
 
-profile_store = ProfileStore(os.getenv("PROFILE_STORAGE_DIR", "profiles"))
+class PostgresProfileStore(ProfileStore):
+    """Durable hosted storage with row locks for concurrent assessment saves.
+
+    SQLite remains the default for local/Docker use. Each operation opens a short
+    transaction; the pooled Neon URL handles connection reuse on the server.
+    """
+
+    def __init__(self, database_url):
+        import psycopg
+        self.database_url = database_url
+        self._driver = psycopg
+        with self._connect() as connection:
+            # Serialize schema initialization when multiple cold starts overlap.
+            connection.execute("SELECT pg_advisory_xact_lock(74219431)")
+            connection.execute("CREATE TABLE IF NOT EXISTS profiles (id TEXT PRIMARY KEY, data TEXT NOT NULL)")
+
+    @contextmanager
+    def _connect(self, write=False):
+        with self._driver.connect(self.database_url, connect_timeout=15) as connection:
+            yield connection
+
+    def get_profile(self, profile_id):
+        profile_id = self._id(profile_id)
+        with self._connect() as connection:
+            row = connection.execute("SELECT data FROM profiles WHERE id=%s", (profile_id,)).fetchone()
+        return json.loads(row[0]) if row else None
+
+    def update_profile(self, profile_id, profile_data):
+        profile_id = self._id(profile_id)
+        with self._connect(write=True) as connection:
+            row = connection.execute("SELECT data FROM profiles WHERE id=%s FOR UPDATE", (profile_id,)).fetchone()
+            if not row:
+                return False
+            data = {**json.loads(row[0]), **profile_data, "id": profile_id, "updated_at": now_iso()}
+            connection.execute("UPDATE profiles SET data=%s WHERE id=%s", (json.dumps(data), profile_id))
+        return True
+
+    def delete_profile(self, profile_id):
+        with self._connect(write=True) as connection:
+            return connection.execute("DELETE FROM profiles WHERE id=%s", (self._id(profile_id),)).rowcount > 0
+
+    def list_profiles(self):
+        with self._connect() as connection:
+            records = [json.loads(row[0]) for row in connection.execute("SELECT data FROM profiles")]
+        fields = ("id", "created_at", "updated_at", "last_assessment_date", "recent_recommendation")
+        return sorted(({key: profile.get(key) for key in fields} for profile in records),
+                      key=lambda item: item.get("updated_at") or "", reverse=True)
+
+    def add_assessment(self, profile_id, assessment_data):
+        profile_id = self._id(profile_id)
+        assessment = dict(assessment_data)
+        assessment["id"] = assessment.get("id") or str(uuid.uuid4())
+        assessment["timestamp"] = now_iso()
+        with self._connect(write=True) as connection:
+            row = connection.execute("SELECT data FROM profiles WHERE id=%s FOR UPDATE", (profile_id,)).fetchone()
+            if not row:
+                return False
+            profile = json.loads(row[0])
+            history = profile.setdefault("assessments", [])
+            if any(item.get("id") == assessment["id"] for item in history):
+                return True
+            history.append(assessment)
+            profile.update(last_assessment_date=assessment["timestamp"],
+                           recent_recommendation=assessment.get("recommended_career"), updated_at=now_iso())
+            connection.execute("UPDATE profiles SET data=%s WHERE id=%s", (json.dumps(profile), profile_id))
+        return True
+
+    def _save_profile(self, profile_id, profile_data):
+        with self._connect(write=True) as connection:
+            connection.execute("INSERT INTO profiles VALUES (%s, %s) ON CONFLICT(id) DO UPDATE SET data=excluded.data",
+                               (self._id(profile_id), json.dumps(profile_data)))
+        return True
+
+
+profile_store = (PostgresProfileStore(os.environ["DATABASE_URL"]) if os.getenv("DATABASE_URL")
+                 else ProfileStore(os.getenv("PROFILE_STORAGE_DIR", "profiles")))
 
 # Backwards-compatible helpers for scripts.
 create_profile = profile_store.create_profile

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "fastapi",
+  "buildCommand": "npm --prefix frontend ci && npm --prefix frontend run build -- --outDir ../public",
+  "regions": ["iad1"],
+  "functions": {
+    "vercel_app.py": {
+      "maxDuration": 60,
+      "excludeFiles": "{frontend/**,tests/**,docs/**,.run/**,.git/**,.venv/**,profiles/**,models/**,data/**,*.ipynb,*.npy,*.png}"
+    }
+  },
+  "rewrites": [
+    {"source": "/dashboard", "destination": "/index.html"},
+    {"source": "/guide", "destination": "/index.html"}
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {"key": "X-Content-Type-Options", "value": "nosniff"},
+        {"key": "X-Frame-Options", "value": "DENY"},
+        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+        {"key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"}
+      ]
+    }
+  ]
+}

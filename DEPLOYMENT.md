@@ -1,5 +1,32 @@
 # Deployment
 
+## Vercel with durable PostgreSQL storage
+
+The root `vercel.json` builds the React frontend into `public/`, serves its assets
+from Vercel's CDN, and runs the Python 3.13 API at `/api` on the same domain.
+`/dashboard` and `/guide` support direct navigation and refresh.
+
+1. Link the repository root to a Vercel project. Keep the root directory at `.`.
+2. Provision a dedicated Neon database with the Free plan in `iad1`, and connect
+   its `DATABASE_URL` to the project's **production** environment. Marketplace
+   terms must be accepted by the account owner. Never put the URL in `VITE_*`.
+3. Deploy with `vercel --prod`. Vercel installs pinned Python dependencies and
+   builds the frontend; the API initializes its profile table in PostgreSQL.
+4. Check `/api/health`, submit an assessment, save it, refresh the dashboard,
+   restore access using a backup code, and delete the test profile.
+
+Cloud profiles use PostgreSQL row locks to preserve simultaneous saves and
+deduplicate retries. Local SQLite data is not uploaded automatically. Model
+artifacts ship with the deployment; runtime retraining and admin endpoints are
+disabled on Vercel because its temporary filesystem is not durable. Redeploy a
+reviewed model to update recommendations. The application rate limiter is per
+instance; use Vercel's firewall controls for deployment-wide traffic protection.
+
+Preview deployments need their own database environment/branch if enabled; do
+not connect unreviewed preview code to production profile data. Local development
+continues to use SQLite when `DATABASE_URL` is unset. Keep database credentials
+only in Vercel environment variables or ignored local environment files.
+
 ## Supported layout
 
 The provided Compose configuration runs one FastAPI worker behind nginx on one host. SQLite is stored on a persistent named volume. This is appropriate for a small educational deployment; horizontal scaling requires additional work.
