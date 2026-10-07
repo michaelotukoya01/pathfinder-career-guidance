@@ -1,4 +1,4 @@
-"""Serve the existing API under /api; Vercel serves public/ from its CDN."""
+"""Vercel entrypoint: /api is Python; public/ is served from the CDN."""
 
 import os
 from contextlib import asynccontextmanager

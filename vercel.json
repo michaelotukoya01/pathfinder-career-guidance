@@ -4,7 +4,7 @@
   "buildCommand": "npm --prefix frontend ci && npm --prefix frontend run build -- --outDir ../public",
   "regions": ["iad1"],
   "functions": {
-    "vercel_app.py": {
+    "app.py": {
       "maxDuration": 60,
       "excludeFiles": "{frontend/**,tests/**,docs/**,.run/**,.git/**,.venv/**,profiles/**,models/**,data/**,*.ipynb,*.npy,*.png}"
     }

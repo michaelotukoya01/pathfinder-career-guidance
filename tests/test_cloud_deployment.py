@@ -8,7 +8,7 @@ import uuid
 from fastapi.testclient import TestClient
 from profile_store import PostgresProfileStore
 from security import request_history
-from vercel_app import app
+from app import app
 
 
 class CloudRoutingTests(unittest.TestCase):
