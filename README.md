@@ -2,6 +2,8 @@
 
 Explore technology careers through a guided self-assessment, understand skill gaps, and turn your results into practical learning milestones.
 
+[**Live application**](https://pathfinder-career-guidance.vercel.app) · [Release checks](https://github.com/michaelotukoya01/pathfinder-career-guidance/actions/workflows/ci.yml)
+
 **React + Vite · FastAPI · scikit-learn · SQLite · English / Spanish**
 
 Pathfinder is an educational portfolio project built around a synthetic dataset. It supports career exploration; it has not been validated for hiring, admissions, aptitude testing, or predicting career success.
@@ -69,6 +71,7 @@ Copy `.env.example` to `.env` for custom backend settings. `frontend/.env.exampl
 | `HOST` / `PORT` | `127.0.0.1` / `8000` | Used by `python main.py` |
 | `CORS_ORIGINS` | Local frontend origins | Comma-separated allowed origins |
 | `PROFILE_STORAGE_DIR` | `profiles` | SQLite database and legacy import directory |
+| `DATABASE_URL` | Unset | Persistent PostgreSQL storage; used by the live Vercel deployment |
 | `ADMIN_API_KEY` | Unset | Random key of at least 32 characters; enables admin endpoints |
 | `ENABLE_RETRAINING_SCHEDULER` | `false` | Opt-in background retraining |
 | `MARKET_WEIGHT` | `0` | Mock market influence; keep zero for the standard demo |

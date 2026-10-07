@@ -2,6 +2,21 @@
 
 ## Vercel with durable PostgreSQL storage
 
+Live application: https://pathfinder-career-guidance.vercel.app
+
+The production project is connected to the dedicated `pathfinder-profiles` Neon
+Free database in `iad1`. GitHub pushes to `main` trigger Vercel deployments.
+On 7 October 2026, HTTPS checks passed for pages, recommendations, input
+validation, profile access, idempotent saves, restored access, history, and
+deletion. The synthetic test profile was removed afterward. Visual browser and
+mobile-device review remains outstanding.
+
+To repeat the live checks (creates and then deletes its own test profile):
+
+```bash
+python scripts/smoke_live.py https://pathfinder-career-guidance.vercel.app
+```
+
 The root `vercel.json` builds the React frontend into `public/`, serves its assets
 from Vercel's CDN, and runs the Python 3.13 API at `/api` on the same domain.
 `/dashboard` and `/guide` support direct navigation and refresh.
